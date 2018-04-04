@@ -6,53 +6,113 @@
         xmlns:local="clr-namespace:Rudo"
         mc:Ignorable="d"
         Name="myWin"
-        Title="AwaleGameWindo" Height="390.612" Width="919.591">
-    <Grid>
+        Title="AwaleGameWindo" Height="436.612" Width="921.091"
+        DataContext =" {Binding RelativeSource={RelativeSource Self}">
+
+
+    <Grid Margin="0,10,0,5">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="45" />
 
-            <RowDefinition Height="280" />
+            <RowDefinition Height="295" />
 
-            <RowDefinition Height="Auto" MinHeight="45" />
+            <RowDefinition Height="Auto" MinHeight="38" />
 
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" HorizontalAlignment="Center" FontSize="20"  FontWeight="Bold">Joueur 1</Label>
-        <Canvas Grid.Row="1" Background="{Binding Path=Style}">
-            <Grid Width="878" Canvas.Top="10" Canvas.Left="10">
+        <Label Grid.Row="1" HorizontalAlignment="Center" FontSize="20"  FontWeight="Bold" Margin="162,0,647,251" Width="104"  Content="{Binding Path=awale.Joueurs[1].Nom,Mode=TwoWay}"/>
+        <Label x:Name="score2" HorizontalAlignment="Left"  Margin="546,0,0,239" Width="92" Content="Score :" FontSize="20"  FontWeight="Bold" Grid.Row="1"/>
+        <Label x:Name="label" FontSize="20" Content="{Binding Path=awale.Score_joueur2 ,Mode = TwoWay}" Margin="644,0,0,256" RenderTransformOrigin="0.447,0.385" HorizontalAlignment="Left" Grid.Row="1" Width="38"/>
+        <Canvas Grid.Row="1" Background="{Binding Path=Style}" Margin="28,0,10,32" Grid.RowSpan="2">
+            <Grid Background="Chocolate" Width="620" Canvas.Top="36" Canvas.Left="146" Height="212">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="140" />
-                    <RowDefinition Height="140" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="73"/>
+                    <RowDefinition Height="97" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition  Width="100"/>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition  Width="10"/>
                     <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="30"/>
                 </Grid.ColumnDefinitions>
+                <Canvas x:Name="e1" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" >
+                    <Ellipse Width="100" Height="70" Fill="Khaki" Canvas.Left="10"  Canvas.Top="25" StrokeThickness="5" Stroke="#FF0000FF"/>
+                    <Button x:Name="e25"  Background="Transparent"                                      
+                            BorderBrush="Transparent" BorderThickness="0"
+                            
+                            Canvas.Left="34" Canvas.Top="41"  FontWeight="Bold" Content="{Binding Path=awale.Cases_joueur2[5] , Mode = TwoWay}" Height="38" Width="47" RenderTransformOrigin="0.316,0.542" Click="e25_Click" IsEnabled="{Binding Path=Enable_joueur2 , Mode=TwoWay}"/>
+                </Canvas>
 
-                <local:ellipseControl  Grid.Row="0" Grid.Column="1" EllipseText="{Binding Path=awaleGame.Cases_joueur2[5], RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Mode=TwoWay}"></local:ellipseControl>
-                <local:ellipseControl Grid.Row="1" Grid.Column="1" EllipseText="{Binding Path=awaleGame.Cases_joueur1[0], RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Mode=TwoWay}"></local:ellipseControl>
-                <local:ellipseControl  Grid.Row="0" Grid.Column="2" EllipseText="{Binding Path=awaleGame.Cases_joueur2[4], RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Mode=TwoWay}"></local:ellipseControl>
-                <local:ellipseControl Grid.Row="1" Grid.Column="2" EllipseText="{Binding Path=awaleGame.Cases_joueur1[1], RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Mode=TwoWay}"></local:ellipseControl>
-                <local:ellipseControl  Grid.Row="0" Grid.Column="3" EllipseText="{Binding Path=awaleGame.Cases_joueur2[3], RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Mode=TwoWay}"></local:ellipseControl>
-                <local:ellipseControl Grid.Row="1" Grid.Column="3" EllipseText="{Binding Path=awaleGame.Cases_joueur1[2], RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Mode=TwoWay}"></local:ellipseControl>
-                <local:ellipseControl  Grid.Row="0" Grid.Column="4" EllipseText="{Binding Path=awaleGame.Cases_joueur2[2], RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Mode=TwoWay}"></local:ellipseControl>
-                <local:ellipseControl Grid.Row="1" Grid.Column="4" EllipseText="{Binding Path=awaleGame.Cases_joueur1[3], RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Mode=TwoWay}"></local:ellipseControl>
-                <local:ellipseControl  Grid.Row="0" Grid.Column="5" EllipseText="{Binding Path=awaleGame.Cases_joueur2[1], RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Mode=TwoWay}"></local:ellipseControl>
-                <local:ellipseControl Grid.Row="1" Grid.Column="5" EllipseText="{Binding Path=awaleGame.Cases_joueur1[4], RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Mode=TwoWay}"></local:ellipseControl>
-                <local:ellipseControl  Grid.Row="0" Grid.Column="6" EllipseText="{Binding Path=awaleGame.Cases_joueur2[0], RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Mode=TwoWay}"></local:ellipseControl>
-                <local:ellipseControl Grid.Row="1" Grid.Column="6" EllipseText="{Binding Path=awaleGame.Cases_joueur1[5], RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Mode=TwoWay}"></local:ellipseControl>
+                <Canvas x:Name="e2" Grid.Row="2" Grid.Column="1" >
+                    <Ellipse Width="100" Height="70" Fill="Khaki" Canvas.Left="10"  Canvas.Top="25" StrokeThickness="5" Stroke="#FF0000FF"/>
+                    <Button Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Canvas.Left="34" Canvas.Top="41"  FontWeight="Bold" Content="{Binding Path=awale.Cases_joueur1[0] , Mode = TwoWay}" Height="38" Width="47" RenderTransformOrigin="0.316,0.542" Click="e10_Click" IsEnabled="{Binding Path=Enable_joueur1 , Mode=TwoWay}"/>
+                </Canvas>
 
+                <Canvas x:Name="e3" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" >
+                    <Ellipse Width="100" Height="70" Fill="Khaki" Canvas.Left="10"  Canvas.Top="25" StrokeThickness="5" Stroke="#FF0000FF"/>
+                    <Button Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Canvas.Left="34" Canvas.Top="41"  FontWeight="Bold" Content="{Binding Path=awale.Cases_joueur2[4], Mode = TwoWay}" Height="38" Width="47" RenderTransformOrigin="0.316,0.542" Click="e24_Click" IsEnabled="{Binding Path=Enable_joueur2 , Mode=TwoWay}"/>
+                </Canvas>
+
+                <Canvas x:Name="e4" Grid.Row="2" Grid.Column="2" >
+                    <Ellipse Width="100" Height="70" Fill="Khaki" Canvas.Left="10"  Canvas.Top="25" StrokeThickness="5" Stroke="#FF0000FF"/>
+                    <Button Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Canvas.Left="34" Canvas.Top="41"  FontWeight="Bold" Content="{Binding Path=awale.Cases_joueur1[1], Mode = TwoWay}" Height="38" Width="47" RenderTransformOrigin="0.316,0.542" Click="e11_Click" IsEnabled="{Binding Path=Enable_joueur1 , Mode=TwoWay}"/>
+                </Canvas>
+
+                <Canvas x:Name="e5" Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" >
+                    <Ellipse Width="100" Height="70" Fill="Khaki" Canvas.Left="10"  Canvas.Top="25" StrokeThickness="5" Stroke="#FF0000FF"/>
+                    <Button Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Canvas.Left="34" Canvas.Top="41"  FontWeight="Bold" Content="{Binding Path=awale.Cases_joueur2[3], Mode = TwoWay}" Height="38" Width="47" RenderTransformOrigin="0.316,0.542" Click="e23_Click" IsEnabled="{Binding Path=Enable_joueur2 , Mode=TwoWay}"/>
+                </Canvas>
+
+                <Canvas x:Name="e6" Grid.Row="2" Grid.Column="3" >
+                    <Ellipse Width="100" Height="70" Fill="Khaki" Canvas.Left="10"  Canvas.Top="25" StrokeThickness="5" Stroke="#FF0000FF"/>
+                    <Button Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Canvas.Left="34" Canvas.Top="41"  FontWeight="Bold" Content="{Binding Path=awale.Cases_joueur1[2], Mode = TwoWay}" Height="38" Width="47" RenderTransformOrigin="0.316,0.542" Click="e12_Click" IsEnabled="{Binding Path=Enable_joueur1 , Mode=TwoWay}"/>
+                </Canvas>
+
+                <Canvas x:Name="e7" Grid.Row="0" Grid.Column="4" Grid.RowSpan="2" >
+                    <Ellipse Width="100" Height="70" Fill="Khaki" Canvas.Left="10"  Canvas.Top="25" StrokeThickness="5" Stroke="#FF0000FF"/>
+                    <Button Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Canvas.Left="34" Canvas.Top="41"  FontWeight="Bold" Content="{Binding Path=awale.Cases_joueur2[2], Mode = TwoWay}" Height="38" Width="47" RenderTransformOrigin="0.316,0.542" Click="e22_Click" IsEnabled="{Binding Path=Enable_joueur2 , Mode=TwoWay}"/>
+                </Canvas>
+
+                <Canvas x:Name="e8" Grid.Row="2" Grid.Column="4" >
+                    <Ellipse Width="100" Height="70" Fill="Khaki" Canvas.Left="10"  Canvas.Top="25" StrokeThickness="5" Stroke="#FF0000FF"/>
+                    <Button Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Canvas.Left="34" Canvas.Top="41"  FontWeight="Bold" Content="{Binding Path=awale.Cases_joueur1[3], Mode = TwoWay}" Height="38" Width="47" RenderTransformOrigin="0.316,0.542" Click="e13_Click" IsEnabled="{Binding Path=Enable_joueur1 , Mode=TwoWay}"/>
+                </Canvas>
+
+
+                <Canvas x:Name="e9" Grid.Row="0" Grid.Column="5" Grid.RowSpan="2" >
+                    <Ellipse Width="100" Height="70" Fill="Khaki" Canvas.Left="10"  Canvas.Top="25" StrokeThickness="5" Stroke="#FF0000FF"/>
+                    <Button Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Canvas.Left="34" Canvas.Top="41"  FontWeight="Bold" Content="{Binding Path=awale.Cases_joueur2[1], Mode = TwoWay}" Height="38" Width="47" RenderTransformOrigin="0.316,0.542" Click="e21_Click" IsEnabled="{Binding Path=Enable_joueur2 , Mode=TwoWay}"/>
+                </Canvas>
+
+                <Canvas x:Name="e10" Grid.Row="2" Grid.Column="5" >
+                    <Ellipse Width="100" Height="70" Fill="Khaki" Canvas.Left="10"  Canvas.Top="25" StrokeThickness="5" Stroke="#FF0000FF"/>
+                    <Button Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Canvas.Left="34" Canvas.Top="41"  FontWeight="Bold" Content="{Binding Path=awale.Cases_joueur1[4], Mode = TwoWay}" Height="38" Width="47" RenderTransformOrigin="0.316,0.542" Click="e14_Click" IsEnabled="{Binding Path=Enable_joueur1 , Mode=TwoWay}"/>
+                </Canvas>
+
+                <Canvas x:Name="e11" Grid.Row="0" Grid.Column="6" Grid.RowSpan="2" >
+                    <Ellipse Width="100" Height="70" Fill="Khaki" Canvas.Left="10"  Canvas.Top="25" StrokeThickness="5" Stroke="#FF0000FF"/>
+                    <Button Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Canvas.Left="34" Canvas.Top="41"  FontWeight="Bold" Content="{Binding Path=awale.Cases_joueur2[0], Mode = TwoWay}" Height="38" Width="47" RenderTransformOrigin="0.316,0.542" Click="e20_Click" IsEnabled="{Binding Path=Enable_joueur2 , Mode=TwoWay}"/>
+                </Canvas>
+
+                <Canvas x:Name="e12" Grid.Row="2" Grid.Column="6" >
+                    <Ellipse Width="100" Height="70" Fill="Khaki" Canvas.Left="10"  Canvas.Top="25" StrokeThickness="5" Stroke="#FF0000FF"/>
+                    <Button Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Canvas.Left="34" Canvas.Top="41"  FontWeight="Bold" Content="{Binding Path=awale.Cases_joueur1[5], Mode = TwoWay}" Height="38" Width="47" RenderTransformOrigin="0.316,0.542" Click="e15_Click" IsEnabled="{Binding Path=Enable_joueur1 , Mode=TwoWay}"/>
+                </Canvas>
             </Grid>
-
-
+            <Ellipse Fill="Chocolate" Height="212" Canvas.Left="46" Stroke="Chocolate" Canvas.Top="36" Width="100"/>
+            <Ellipse  Fill="Chocolate" Height="212" Canvas.Left="765" Stroke="Chocolate" Canvas.Top="36" Width="100"/>
+            <Rectangle Fill="Chocolate" Height="212" Canvas.Left="97" Stroke="Chocolate" Canvas.Top="36" Width="64"/>
+            <Rectangle Fill="Chocolate" Height="212" Canvas.Left="765" Stroke="Chocolate" Canvas.Top="36" Width="49"/>
         </Canvas>
-        <Label Grid.Row="2" HorizontalAlignment="Center" FontSize="20"  FontWeight="Bold">Joueur 2</Label>
+        <Label Grid.Row="1" HorizontalAlignment="Center" FontSize="20"  FontWeight="Bold" Margin="162,254,646,27" Width="104" Grid.RowSpan="2" Content="{Binding Path=awale.Joueurs[0].Nom,Mode=TwoWay}"/>
+        <Label Grid.Row="1" FontSize="20"  FontWeight="Bold" x:Name="joueur1" Content="Score :" HorizontalAlignment="Left" Margin="546,254,0,0" Width="92" RenderTransformOrigin="0.625,0.056" />
+        <Label x:Name="label1" FontSize="20" Content="{Binding Path=awale.Score_joueur1 ,Mode = TwoWay}" Margin="643,254,231,0" Grid.Row="1" />
+
 
     </Grid>
 </Window>

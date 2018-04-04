@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 
 namespace Rudo.Model
 {
-    class Joueur
+   public class Joueur
     {
-        string nom;
-        string prenom;
+        string nom ;
+        //string prenom;
 
         public Joueur()
         {
 
         }
-
+        public Joueur(string nom)
+        {
+            this.nom = nom;
+        }
         public string Nom
         {
             get
@@ -28,17 +31,7 @@ namespace Rudo.Model
             }
         }
 
-        public string Prenom
-        {
-            get
-            {
-                return prenom;
-            }
-            set
-            {
-                prenom = value;
-            }
-        }
+       
 
     }
 }

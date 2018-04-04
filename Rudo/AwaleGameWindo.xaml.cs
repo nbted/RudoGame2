@@ -1,34 +1,186 @@
 ﻿using Rudo.Model;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Rudo
 {
     /// <summary>
     /// Interaction logic for AwaleGameWindo.xaml
     /// </summary>
-    public partial class AwaleGameWindo : Window, INotifyPropertyChanged
+    public partial class AwaleGameWindo : Window
     {
-        public AwaleGame awaleGame { get; set; }
+        AwaleGame awaleGame = AwaleGame.Instance;
+        
+        public Gestion gestion ;
+       
         public AwaleGameWindo()
         {
+
             InitializeComponent();
-            awaleGame = new AwaleGame();
+             gestion = Gestion.Instance;
+
+            //awaleGame = AwaleGame.Instance;
             this.DataContext = awaleGame;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void e25_Click(object sender, RoutedEventArgs e)
+        {
+            if (AwaleGame.Instance.awale.GaveOver == false)
+            {
+                AwaleGame.Instance.demande_joueur2(6);
+             
+            }
+            else
+            {
+                AwaleGame.Instance.terminer_jeu();
+                AwaleGame.Instance.afficher_gagnant_2joueurs();   
+             
+            }
+
+        }
+
+        private void e24_Click(object sender, RoutedEventArgs e)
+        {
+            if (AwaleGame.Instance.awale.GaveOver == false)
+            {
+                AwaleGame.Instance.demande_joueur2(5);
+            }
+            else
+            {
+                AwaleGame.Instance.terminer_jeu();
+                AwaleGame.Instance.afficher_gagnant_2joueurs();
+            }
+        }
+
+        private void e23_Click(object sender, RoutedEventArgs e)
+        {
+            if (AwaleGame.Instance.awale.GaveOver == false)
+            {
+                AwaleGame.Instance.demande_joueur2(4);
+            }
+
+            else
+            {
+                AwaleGame.Instance.terminer_jeu();
+                AwaleGame.Instance.afficher_gagnant_2joueurs();
+            }
+        }
+
+        private void e22_Click(object sender, RoutedEventArgs e)
+        {
+            if (AwaleGame.Instance.awale.GaveOver == false)
+            {
+                AwaleGame.Instance.demande_joueur2(3);
+            }
+            else
+            {
+                AwaleGame.Instance.terminer_jeu();
+                AwaleGame.Instance.afficher_gagnant_2joueurs();
+            }
+        }
+
+        private void e21_Click(object sender, RoutedEventArgs e)
+        {
+            if (AwaleGame.Instance.awale.GaveOver == false)
+            {
+                AwaleGame.Instance.demande_joueur2(2);
+            }
+            else
+            {
+                AwaleGame.Instance.terminer_jeu();
+                AwaleGame.Instance.afficher_gagnant_2joueurs();
+            }
+        }
+
+        private void e20_Click(object sender, RoutedEventArgs e)
+        {
+            if (AwaleGame.Instance.awale.GaveOver == false)
+            {
+                AwaleGame.Instance.demande_joueur2(1);
+            }
+            else
+            {
+                AwaleGame.Instance.terminer_jeu();
+                AwaleGame.Instance.afficher_gagnant_2joueurs();
+            }
+        }
+
+        private void e10_Click(object sender, RoutedEventArgs e)
+        {
+            if (AwaleGame.Instance.awale.GaveOver == false)
+            {
+                AwaleGame.Instance.demande_joueur1(1);
+            }
+            else
+            {
+                AwaleGame.Instance.terminer_jeu();
+                AwaleGame.Instance.afficher_gagnant_2joueurs();
+            }
+        }
+
+        private void e11_Click(object sender, RoutedEventArgs e)
+        {
+            if (AwaleGame.Instance.awale.GaveOver == false)
+            {
+                AwaleGame.Instance.demande_joueur1(2);
+            }
+            else
+            {
+                AwaleGame.Instance.terminer_jeu();
+                AwaleGame.Instance.afficher_gagnant_2joueurs();
+            }
+        }
+
+        private void e12_Click(object sender, RoutedEventArgs e)
+        {
+            if (AwaleGame.Instance.awale.GaveOver == false)
+            {
+                AwaleGame.Instance.demande_joueur1(3);
+            }
+            else
+            {
+                AwaleGame.Instance.terminer_jeu();
+                AwaleGame.Instance.afficher_gagnant_2joueurs();
+            }
+        }
+
+        private void e13_Click(object sender, RoutedEventArgs e)
+        {
+            if (AwaleGame.Instance.awale.GaveOver == false)
+            {
+                AwaleGame.Instance.demande_joueur1(4);
+            }
+            else
+            {
+                AwaleGame.Instance.terminer_jeu();
+                AwaleGame.Instance.afficher_gagnant_2joueurs();
+            }
+        }
+
+        private void e14_Click(object sender, RoutedEventArgs e)
+        {
+            if (AwaleGame.Instance.awale.GaveOver == false)
+            {
+                AwaleGame.Instance.demande_joueur1(5);
+            }
+            else
+            {
+                AwaleGame.Instance.terminer_jeu();
+                AwaleGame.Instance.afficher_gagnant_2joueurs();
+            }
+        }
+
+        private void e15_Click(object sender, RoutedEventArgs e)
+        {
+            if (AwaleGame.Instance.awale.GaveOver == false)
+            {
+                AwaleGame.Instance.demande_joueur1(6);
+            }
+            else
+            {
+                AwaleGame.Instance.terminer_jeu();
+                AwaleGame.Instance.afficher_gagnant_2joueurs();
+            }
+        }
     }
 }

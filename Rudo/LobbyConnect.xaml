@@ -1,0 +1,54 @@
+﻿<Window x:Class="Rudo.LobbyConnect"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Rudo"
+        mc:Ignorable="d"
+        Title="LobbyConnect" Height="397" Width="467">
+    <Grid>
+        <Label Content="Robby" Margin="215,0,200,0" VerticalAlignment="Top" Height="28" d:LayoutOverrides="Width"/>
+
+        <ListBox x:Name="listJoueur" HorizontalAlignment="Left" Height="80" Margin="69,246,0,0" VerticalAlignment="Top" Width="336">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="50" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding Nom }" />
+                        <TextBlock Grid.Column="2"  Text="Ready"/>
+                        <CheckBox Grid.Column="3" Name="readyBox" Checked="readyBox_CheckedChanged" Unchecked="readyBox_CheckedChanged2"/>
+
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="cancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="10,336,0,0" VerticalAlignment="Top" Width="75" Click="cancel_Click"/>
+        <Button x:Name="startButton" Content="Start" HorizontalAlignment="Left" Margin="374,331,0,0" VerticalAlignment="Top" Width="75" Click="start_Click"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="69,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox1" Height="23" Margin="69,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Right" Height="23" Margin="0,69,21,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Right" Height="23" Margin="0,100,21,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label" Content="IP" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Port" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="SERVER" HorizontalAlignment="Left" Margin="100,35,0,0" VerticalAlignment="Top" Width="54"/>
+        <Label x:Name="label3" Content="CLIENT" HorizontalAlignment="Right" Margin="0,35,54,0" VerticalAlignment="Top"/>
+        <Button x:Name="StartServer" Content="Start Server" HorizontalAlignment="Left" Margin="91,145,0,0" Width="72" Click="start_server" Height="24" VerticalAlignment="Top"/>
+        <Button x:Name="Connect" Content="Connect" HorizontalAlignment="Right" Margin="0,145,54,0" Width="61" Click="Connect_Click" Height="24" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="IP" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label4" Content="Label" HorizontalAlignment="Right" Margin="0,0,-38,28" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="sendTextBox" Height="23" Margin="157,0,200,141" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
+        <Button x:Name="joueur" Content="Joueur" HorizontalAlignment="Left" Margin="69,0,0,141" VerticalAlignment="Bottom" Width="75" Click="joueur_Click" Height="23"/>
+        <Label x:Name="label5" Content="IP" HorizontalAlignment="Right" Margin="0,66,174,0" VerticalAlignment="Top"/>
+        <Label x:Name="label6" Content="Port" HorizontalAlignment="Right" Margin="0,100,162,0" VerticalAlignment="Top"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Margin="10,35,0,182" Width="205"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Right" Margin="0,35,7,182" Width="187"/>
+        <TextBox x:Name="receiveTextBox" HorizontalAlignment="Right" Height="52" Margin="0,0,10,125" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="184"/>
+
+
+    </Grid>
+</Window>
